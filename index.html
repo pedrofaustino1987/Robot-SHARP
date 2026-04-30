@@ -22,9 +22,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
@@ -62,11 +60,9 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        nav a:hover { color: var(--accent-color); }
 
-        /* --- SECCIÓN 1: HERO (INTRODUCCIÓN) --- */
+        /* --- SECCIÓN 1: HERO --- */
         .hero {
             display: flex;
             justify-content: center;
@@ -132,7 +128,7 @@
             display: block;
         }
 
-        /* --- SECCIÓN 2: CARACTERÍSTICAS GENERALES --- */
+        /* --- SECCIÓN 2: CARACTERÍSTICAS --- */
         .features {
             padding: 80px 5%;
             background-color: var(--card-bg);
@@ -178,7 +174,7 @@
             font-size: 0.95rem;
         }
 
-        /* --- SECCIÓN 3: ARQUITECTURA BÁSICA (DIAGRAMA DE FLUJO) --- */
+        /* --- SECCIÓN 3: ARQUITECTURA BÁSICA --- */
         .architecture-section {
             padding: 80px 5%;
             background: linear-gradient(180deg, var(--bg-color) 0%, #111111 100%);
@@ -265,7 +261,7 @@
             line-height: 1.5;
         }
 
-        /* --- SECCIÓN 4: DESGLOSE TÉCNICO (¿QUÉ HAY DENTRO?) --- */
+        /* --- SECCIÓN 4: DESGLOSE TÉCNICO --- */
         .deep-dive-section {
             padding: 80px 5%;
             background-color: #050505;
@@ -364,7 +360,7 @@
             font-weight: 600;
         }
 
-        /* --- SECCIÓN 5: ARQUITECTURA COGNITIVA AVANZADA (CRAFTNET) --- */
+        /* --- SECCIÓN 5: ARQUITECTURA COGNITIVA (CRAFTNET) --- */
         .cognitive-section {
             padding: 80px 5%;
             background-color: #080808;
@@ -462,7 +458,50 @@
             line-height: 1.6;
         }
 
-        /* --- SECCIÓN 6: LA EMPRESA --- */
+        /* --- SECCIÓN 6: VIDEO DEMOSTRACIÓN --- */
+        .video-section {
+            padding: 80px 5%;
+            background-color: #030303;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .video-section h2 span { color: var(--accent-color); }
+
+        .video-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.1);
+            border: 1px solid #222;
+        }
+
+        .video-wrapper iframe, 
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- SECCIÓN 7: LA EMPRESA --- */
         .about {
             padding: 80px 5%;
             max-width: 1200px;
@@ -501,6 +540,7 @@
             <a href="#arquitectura">Arquitectura</a>
             <a href="#componentes">Hardware</a>
             <a href="#cerebro">IA (CraftNet)</a>
+            <a href="#demo">Video</a>
         </nav>
     </header>
 
@@ -514,7 +554,7 @@
             </div>
             <div class="hero-image">
                 <div class="image-frame">
-                    <!-- RECUERDA: Tu imagen del robot debe llamarse robot-sharpa.png y estar en la misma carpeta -->
+                    <!-- RECUERDA: Tu imagen del robot debe llamarse robot-sharpa.png -->
                     <img src="robot-sharpa.png" alt="Robot Humanoide Sharpa haciendo un gesto de saludo">
                 </div>
             </div>
@@ -543,7 +583,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 3: Arquitectura Básica (Flujo) -->
+        <!-- SECCIÓN 3: Arquitectura Básica -->
         <section class="architecture-section" id="arquitectura">
             <h2>Anatomía de <span>Sharpa</span></h2>
             
@@ -575,7 +615,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 4: Desglose Técnico de Hardware -->
+        <!-- SECCIÓN 4: Desglose Técnico -->
         <section class="deep-dive-section" id="componentes">
             <h2>¿Qué hay <span>dentro</span>?</h2>
             <p class="deep-dive-subtitle">Desglose técnico de los hardwares y softwares que componen la estructura</p>
@@ -587,9 +627,9 @@
                         <h3>Sistema de Control</h3>
                     </div>
                     <ul class="component-list">
-                        <li><strong>Placa Madre:</strong> Computadora embebida (ej. Nvidia Jetson) para procesamiento central de baja latencia.</li>
+                        <li><strong>Placa Madre:</strong> Computadora embebida (ej. Nvidia Jetson) para procesamiento central.</li>
                         <li><strong>Módulo IA:</strong> Chip dedicado para procesar Lenguaje Natural y modelos de visión.</li>
-                        <li><strong>ROS / Firmware:</strong> Sistema Operativo de Robótica que coordina el hardware con el software.</li>
+                        <li><strong>ROS / Firmware:</strong> Sistema Operativo de Robótica que coordina hardware y software.</li>
                     </ul>
                 </div>
 
@@ -599,8 +639,8 @@
                         <h3>Sistema de Sensado</h3>
                     </div>
                     <ul class="component-list">
-                        <li><strong>Cámaras RGB-D:</strong> Par de cámaras que capturan color (RGB) y mapa de profundidad (D) para ver en 3D.</li>
-                        <li><strong>Encoders:</strong> Sensores en articulaciones que miden el ángulo exacto de los brazos para no sobrepasarse.</li>
+                        <li><strong>Cámaras RGB-D:</strong> Par de cámaras que capturan color (RGB) y mapa de profundidad (D).</li>
+                        <li><strong>Encoders:</strong> Sensores en articulaciones que miden el ángulo exacto de los brazos.</li>
                         <li><strong>IMU:</strong> Sensor inercial que le dice al cerebro si el robot está nivelado o inclinado.</li>
                     </ul>
                 </div>
@@ -612,8 +652,8 @@
                     </div>
                     <ul class="component-list">
                         <li><strong>Servomotores:</strong> Motores de alta precisión en hombros y codos que controlan fuerza y posición.</li>
-                        <li><strong>Drivers (Puente H):</strong> Placas que amplifican la señal del cerebro para mover los motores con fuerza real.</li>
-                        <li><strong>Actuadores Lineales:</strong> Sistemas para movimientos finos de cuello o manos si están articuladas.</li>
+                        <li><strong>Drivers (H):</strong> Placas que amplifican la señal del cerebro para mover los motores con fuerza.</li>
+                        <li><strong>Act. Lineales:</strong> Sistemas para movimientos finos de cuello o manos articuladas.</li>
                     </ul>
                 </div>
 
@@ -623,15 +663,15 @@
                         <h3>Sistema Mecánico</h3>
                     </div>
                     <ul class="component-list">
-                        <li><strong>Chasis Estructural:</strong> Esqueleto interno de aluminio CNC o plásticos de alta resistencia.</li>
+                        <li><strong>Chasis:</strong> Esqueleto interno de aluminio CNC o plásticos de alta resistencia.</li>
                         <li><strong>Transmisión:</strong> Engranajes, poleas y correas dentadas que conectan motores con articulaciones.</li>
-                        <li><strong>Carcasa Externa:</strong> "Piel" blanca diseñada en CAD e impresa en 3D para protección y estética.</li>
+                        <li><strong>Carcasa:</strong> "Piel" blanca diseñada en CAD e impresa en 3D para protección y estética.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: Cerebro CraftNet (Imagen + Explicación) -->
+        <!-- SECCIÓN 5: Cerebro CraftNet -->
         <section class="cognitive-section" id="cerebro">
             <div class="cognitive-container">
                 <h2>El Cerebro <span>CraftNet</span></h2>
@@ -639,7 +679,6 @@
 
                 <div class="diagram-frame">
                     <span class="diagram-label">MULTIMODAL ARCHITECTURE</span>
-                    <!-- Aquí está insertada la imagen del diagrama complejo que me pasaste -->
                     <img src="https://z-cdn-media.chatglm.cn/files/afca4aa0-97e5-4f3d-bbf1-dc88d3dab0f8.png?auth_key=1877570445-f7678d581b9548ca9e75b990db475f5a-0-6419ade598b6ac42bc59e5232d3a5644" alt="Diagrama de Arquitectura CraftNet System 0, 1, 2">
                 </div>
 
@@ -647,23 +686,45 @@
                     <div class="sys-card">
                         <h3>System 2: Reasoning</h3>
                         <span class="hz-badge">~1 Hz (Lento)</span>
-                        <p>Es el "raciocinio". Integra el <strong>Lenguaje</strong> y la <strong>Visión</strong>. Piensa, analiza el contexto y decide la "Intención Física" general (ej. "Debo saludar").</p>
+                        <p>Es el "raciocinio". Integra el <strong>Lenguaje</strong> y la <strong>Visión</strong>. Piensa y decide la "Intención Física" general.</p>
                     </div>
                     <div class="sys-card">
                         <h3>System 1: Motion</h3>
                         <span class="hz-badge">~10 Hz (Medio)</span>
-                        <p>Es el "cerebro motor". Toma la decisión lenta y la traduce en "Acciones Gruesas". Coordina a gran velocidad qué músculos deben moverse.</p>
+                        <p>Es el "cerebro motor". Traduce la decisión en "Acciones Gruesas". Coordina a gran velocidad qué músculos deben moverse.</p>
                     </div>
                     <div class="sys-card">
                         <h3>System 0: Interaction</h3>
                         <span class="hz-badge">~100 Hz (Ultra rápido)</span>
-                        <p>Son los "reflejos". Utiliza el tacto para generar "Acciones Finas". Si hay resistencia inesperada, este sistema corrige el movimiento instantáneamente.</p>
+                        <p>Son los "reflejos". Genera "Acciones Finas" para corregir el movimiento instantáneamente si hay resistencia.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 6: Sobre la Startup -->
+        <!-- SECCIÓN 6: Video Demostración -->
+        <section class="video-section" id="demo">
+            <h2>Sharpa en <span>Acción</span></h2>
+            <p class="video-subtitle">Observa cómo la arquitectura CraftNet cobra vida en el mundo real a través de sus interacciones.</p>
+            
+            <div class="video-wrapper">
+                <!-- 
+                    =========================================================
+                    PASO FINAL: REEMPLAZA ESTA URL
+                    Si el video de la página de Sharpa está en YouTube, copia 
+                    el enlace y cámbialo por este. Asegúrate de que diga 
+                    "youtube.com/embed/..." y no "youtube.com/watch?..."
+                    =========================================================
+                -->
+                <iframe src="https://www.youtube.com/watch?v=GcTUlOHvdOs" 
+                        title="Video demostrativo del robot Sharpa" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: La Empresa -->
         <section class="about" id="nosotros">
             <h2>Innovación Latinoamericana</h2>
             <p>Sharpa es mucho más que un robot; es el reflejo del talento tecnológico de Perú y América Latina. Desarrollado por la startup homónima, este proyecto fusiona la ingeniería de hardware de punta con el desarrollo avanzado de software de IA.</p>
