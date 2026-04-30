@@ -458,7 +458,7 @@
             line-height: 1.6;
         }
 
-        /* --- SECCIÓN 6: VIDEO DEMOSTRACIÓN --- */
+        /* --- SECCIÓN 6: VIDEO LOCAL (MP4) --- */
         .video-section {
             padding: 80px 5%;
             background-color: #030303;
@@ -491,7 +491,6 @@
             border: 1px solid #222;
         }
 
-        .video-wrapper iframe, 
         .video-wrapper video {
             position: absolute;
             top: 0;
@@ -702,21 +701,17 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 6: Video Demostración -->
+        <!-- SECCIÓN 6: Video Demostración Local -->
         <section class="video-section" id="demo">
             <h2>Sharpa en <span>Acción</span></h2>
             <p class="video-subtitle">Observa cómo la arquitectura CraftNet cobra vida en el mundo real a través de sus interacciones.</p>
             
             <div class="video-wrapper">
-                <!-- 
-                    =========================================================
-                    PASO FINAL: REEMPLAZA ESTA URL
-                    Si el video de la página de Sharpa está en YouTube, copia 
-                    el enlace y cámbialo por este. Asegúrate de que diga 
-                    "youtube.com/embed/..." y no "youtube.com/watch?..."
-                    =========================================================
-                -->
-<source src="sharpa.mp4" type="video/mp4">
+                <!-- REPRODUCTOR DE VIDEO LOCAL -->
+                <video controls>
+                    <source src="sharpa.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video en formato MP4.
+                </video>
             </div>
         </section>
 
